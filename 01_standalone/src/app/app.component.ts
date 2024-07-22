@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { TemplateSyntaxComponent } from "./template-syntax/template-syntax.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    RouterLink,
     RouterOutlet, 
     TemplateSyntaxComponent
   ],
