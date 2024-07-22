@@ -1,21 +1,57 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { Component } from '@angular/core';
+
+import localeDe from '@angular/common/locales/de';
+import localeCH from '@angular/common/locales/de-CH';
+import { LOCALE_ID } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+registerLocaleData(localeDe, 'de-DE');
+registerLocaleData(localeCH, 'de-CH');
+
+const standardCurrency = 'EUR';
 
 @Component({
   selector: 'app-template-syntax',
   standalone: true,
   imports: [
     CommonModule,
+    FormsModule,
+  ],
+  providers: [
+    {
+      // Default, wenn 
+      provide: LOCALE_ID, useValue: 'de-DE'
+    }
   ],
   templateUrl: './template-syntax.component.html',
   styleUrl: './template-syntax.component.scss'
 })
 export class TemplateSyntaxComponent {
-  public statusFlag = false;
-
+  public statusFlag = true;
+  public locale = 'de-CH';
+  public cur = standardCurrency;
   // explizit oder implizit public
   public textElement: string = 'Das ist ein Text';
-  public valueNumber = 340059.9348;
+  public valueNumber = 98475.9348;
   public buttonDisabled = true;
   public html = 'Das ist ein <strong>wichtiger</strong> Inhalt';
+  public date = new Date();
+
+  public list = ['Element A', 'Element B'];
+
+  clickHandler(e: Event) {
+    console.log(e);
+  }
+
+  keydownHandler(e: KeyboardEvent) {
+    console.log(e.key);
+  }
+
+  formsHandler(e: Event) {
+    // e.preventDefault();
+    console.log(this.amount);
+  }
+
+  amount = 0;
 }

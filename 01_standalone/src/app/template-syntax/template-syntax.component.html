@@ -1,6 +1,6 @@
 <h2>Template Syntax</h2>
 <h3>Interpolation Directive</h3>
-<p>{{  20000.5364 }}</p>
+<p>{{ 20000.5364 }}</p>
 <p>{{ (20000.5364).toLocaleString('de-DE') }}</p>
 <p>{{ 'Text'.toUpperCase() }}</p>
 <p>Textelement: {{ textElement }}</p>
@@ -29,9 +29,67 @@
 }">Possimus voluptas officia id voluptatem blanditiis!</p>
 <h4>Class Attribute</h4>
 <p class="alert alert-info">Lorem ipsum dolor sit.</p>
-<p class="alert" [class.alert-success]="statusFlag" [class.alert-danger]="!statusFlag">Facere, dolorem. Assumenda, tempora?</p>
+<p class="alert" [class.alert-success]="statusFlag" [class.alert-danger]="!statusFlag">Facere, dolorem. Assumenda,
+    tempora?</p>
 <p [ngClass]="{
     alert: true,
     'alert-success': statusFlag,
     'alert-danger': !statusFlag
 }">Eos architecto at maiores?</p>
+
+<h4>Sturkturelle Direktiven</h4>
+
+<div>
+    <p>Alte Syntax:</p>
+    <p *ngIf="statusFlag">Lorem ipsum dolor sit amet.</p>
+</div>
+
+@if(statusFlag) {
+<p>statusFlag ist true</p>
+} @else {
+<p>statusFlag ist false</p>
+}
+
+<ul>
+    <!--$index: eindeutiger Wert pro Listenelement, hier der Index des Array-Objekts -->
+    @for (item of list; track $index) {
+    <li>
+        {{ item }}
+    </li>
+    }
+</ul>
+
+<h3>Pipes</h3>
+
+JSON-Pipe:
+<pre>
+{{ list | json }}    
+</pre>
+
+<p>Zahlen: {{ valueNumber | number:'1.2-2':'de-CH' }}</p>
+<p>Zahlen: {{ valueNumber | currency:cur:'symbol':'1.2-2'}}</p>
+<p>Zahlen: {{ 0.45 | number:'5.2-2' }}</p>
+<p>Zahlen: {{ 0.45 | number:'1.5-5' }}</p>
+<p>Text: {{ textElement | uppercase }}</p>
+<p>Datum: {{ date | date }}</p>
+
+<h3>Event Direktiven</h3>
+<div class="mb-3">
+    <button class="btn btn-primary me-2" (click)="statusFlag = !statusFlag">Wert ändern</button>
+    <button class="btn btn-primary" (click)="clickHandler($event)">Methode aufrufen</button>
+</div>
+<div class="mb-3">
+    <textarea name="note" id="note" class="form-control" (keydown)="keydownHandler($event)"></textarea>
+</div>
+
+<h3>Formulare</h3>
+<form (ngSubmit)="formsHandler($event)">
+    <div class="mb-3">
+        <label for="anzahl">Anzahl:</label>
+        <input type="number" name="anzahl" id="anzahl" class="form-control" [(ngModel)]="amount"><br>
+        {{ amount }}
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+</form>
