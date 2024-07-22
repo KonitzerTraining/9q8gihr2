@@ -1,1 +1,37 @@
-<p>template-syntax works!</p>
+<h2>Template Syntax</h2>
+<h3>Interpolation Directive</h3>
+<p>{{  20000.5364 }}</p>
+<p>{{ (20000.5364).toLocaleString('de-DE') }}</p>
+<p>{{ 'Text'.toUpperCase() }}</p>
+<p>Textelement: {{ textElement }}</p>
+<p>Zahl: {{ valueNumber }}</p>
+
+<h3>Attribute Directives</h3>
+<p title="textElement">Lorem ipsum dolor sit amet.</p>
+<p [title]="textElement">Lorem ipsum dolor sit amet.</p>
+<p [title]="'Text für Title'">Lorem ipsum dolor sit amet.</p>
+
+<div class="mb-3">
+    <button class="btn btn-info" [disabled]="buttonDisabled">Button</button>
+</div>
+
+<h4>Angular Attribute Directive</h4>
+<p>Versuch: {{ html }}</p>
+<p [innerHTML]="html"></p>
+
+<h4>Style Attribute</h4>
+<p style="background-color: blue; color: white">Lorem ipsum dolor sit amet consectetur.</p>
+<p [style.color]="'red'">Numquam libero id tempore corrupti incidunt.</p>
+<p [ngStyle]="{
+        padding: '5px',
+        backgroundColor: 'blue',
+        color: 'white'
+}">Possimus voluptas officia id voluptatem blanditiis!</p>
+<h4>Class Attribute</h4>
+<p class="alert alert-info">Lorem ipsum dolor sit.</p>
+<p class="alert" [class.alert-success]="statusFlag" [class.alert-danger]="!statusFlag">Facere, dolorem. Assumenda, tempora?</p>
+<p [ngClass]="{
+    alert: true,
+    'alert-success': statusFlag,
+    'alert-danger': !statusFlag
+}">Eos architecto at maiores?</p>
