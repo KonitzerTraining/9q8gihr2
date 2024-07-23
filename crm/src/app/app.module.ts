@@ -5,15 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { StartModule } from './features/start/start.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundPageComponent,
-    NavigationComponent
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
+
+    // Feature Module
+    StartModule,
+
+    // Basic Routing
     AppRoutingModule
   ],
   providers: [],
