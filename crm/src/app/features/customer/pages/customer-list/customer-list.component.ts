@@ -20,7 +20,7 @@ export class CustomerListComponent implements OnInit {
 
   // Dependency Injection
   constructor(
-    public customerService: CustomerService
+    private customerService: CustomerService
   ) {}
 
   ngOnInit(): void {

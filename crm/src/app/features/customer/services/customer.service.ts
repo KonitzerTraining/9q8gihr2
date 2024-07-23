@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,9 +6,14 @@ import { Injectable } from '@angular/core';
 })
 export class CustomerService {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getAll() {
-    console.log('läuft');
+    this.http.get('http://localhost:3002/customers')
+      .subscribe((customers) => {
+        console.log(customers);
+      })
   }
 }

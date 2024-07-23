@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CustomerRoutingModule } from './customer-routing.module';
 import { CustomerIndexComponent } from './customer-index.component';
 import { CustomerListComponent } from './pages/customer-list/customer-list.component';
+import { provideHttpClient } from '@angular/common/http';
 
 
 @NgModule({
@@ -14,6 +15,9 @@ import { CustomerListComponent } from './pages/customer-list/customer-list.compo
   imports: [
     CommonModule,
     CustomerRoutingModule
+  ],
+  providers: [
+    provideHttpClient(),
   ]
 })
 export class CustomerModule { }
