@@ -8,6 +8,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { StartModule } from './features/start/start.module';
 
 import { LegalModule } from './features/legal/legal.module';
+import { CustomerModule } from './features/customer/customer.module';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,9 @@ import { LegalModule } from './features/legal/legal.module';
 
     // Feature Module
     StartModule,
-    // HelpModule,
+    CustomerModule,
 
+    // HelpModule,
     LegalModule,
 
     // Basic Routing
