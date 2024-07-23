@@ -6,7 +6,6 @@ import { environment } from '../../../../environments/environment';
 
 const url = environment.api + 'customers/';
 
-
 @Injectable({
   providedIn: 'root'
 })

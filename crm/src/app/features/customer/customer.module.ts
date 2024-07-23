@@ -5,7 +5,7 @@ import { CustomerRoutingModule } from './customer-routing.module';
 import { CustomerIndexComponent } from './customer-index.component';
 import { CustomerListComponent } from './pages/customer-list/customer-list.component';
 import { provideHttpClient } from '@angular/common/http';
-
+import { CoreModule } from '../../core/core.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +14,8 @@ import { provideHttpClient } from '@angular/common/http';
   ],
   imports: [
     CommonModule,
+    // Shared Module
+    CoreModule,
     CustomerRoutingModule
   ],
   providers: [
