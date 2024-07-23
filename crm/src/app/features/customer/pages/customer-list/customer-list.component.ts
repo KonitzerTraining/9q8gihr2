@@ -18,7 +18,7 @@ export class CustomerListComponent implements OnInit {
   public customers: Customer[] = [];
 
   ngOnInit(): void {
-    this.loadCustomers()
+    this.loadCustomers();
   }
 
   loadCustomers() {

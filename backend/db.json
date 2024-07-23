@@ -1,19 +1,25 @@
 {
-  "posts": [
+  "customers": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": 3,
+      "name": "Tim Taler",
+      "credit": 300
+    },{
+      "id": 4,
+      "name": "Lee",
+      "credit": 400
+    },{
+      "id": 5,
+      "name": "Matt",
+      "credit": 3400
+    },{
+      "id": 6,
+      "name": "Stan",
+      "credit": 20
+    },{
+      "id": 7,
+      "name": "Roy",
+      "credit": 350
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
