@@ -1,16 +1,28 @@
-import { Component } from '@angular/core';
-import type { Customer } from '../../model/customer';
+import { Component, OnInit } from '@angular/core';
+import { Customer } from '../../model/customer';
+
+const customersMock: Customer[] = [
+  {
+    id: 4,
+    name: 'Tim',
+    credit: 25
+  }
+];
 
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html'
 })
-export class CustomerListComponent {
-  public customers: Customer[] = [
-    {
-      id: 4,
-      name: 'Tim',
-      credit: 25
-    }
-  ];
+export class CustomerListComponent implements OnInit {
+  
+  public customers: Customer[] = [];
+
+  ngOnInit(): void {
+    this.loadCustomers()
+  }
+
+  loadCustomers() {
+    this.customers = customersMock;
+  }
+
 }
