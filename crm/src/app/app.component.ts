@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
   <app-navigation></app-navigation>
   
   <div class="container py-4">
-    <h1 class="display-3">CRM</h1>
     <router-outlet></router-outlet>
   </div>
   

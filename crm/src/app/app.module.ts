@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { StartModule } from './features/start/start.module';
-import { HelpModule } from './features/help/help.module';
+
+import { LegalModule } from './features/legal/legal.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { HelpModule } from './features/help/help.module';
 
     // Feature Module
     StartModule,
-    HelpModule,
+    // HelpModule,
+
+    LegalModule,
 
     // Basic Routing
     AppRoutingModule
