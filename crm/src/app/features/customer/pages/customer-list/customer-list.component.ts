@@ -28,8 +28,10 @@ export class CustomerListComponent implements OnInit {
   }
 
   loadCustomers() {
-    this.customers = customersMock;
     this.customerService.getAll()
+      .subscribe((customers) => {
+        this.customers = customers;
+      });
   }
 
 }
