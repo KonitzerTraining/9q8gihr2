@@ -9,6 +9,12 @@ import { StartModule } from './features/start/start.module';
 
 import { LegalModule } from './features/legal/legal.module';
 import { CustomerModule } from './features/customer/customer.module';
+import { registerLocaleData } from '@angular/common';
+
+import localeDe from '@angular/common/locales/de';
+import { LOCALE_ID } from '@angular/core';
+
+registerLocaleData(localeDe, 'de-DE');
 
 @NgModule({
   declarations: [
@@ -29,7 +35,11 @@ import { CustomerModule } from './features/customer/customer.module';
     // Basic Routing
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID, useValue: 'de-DE',
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

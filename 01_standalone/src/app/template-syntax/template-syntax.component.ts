@@ -1,11 +1,12 @@
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { Component } from '@angular/core';
 
-import localeDe from '@angular/common/locales/de';
 import localeCH from '@angular/common/locales/de-CH';
-import { LOCALE_ID } from '@angular/core';
+
 import { FormsModule } from '@angular/forms';
 
+import localeDe from '@angular/common/locales/de';
+import { LOCALE_ID } from '@angular/core';
 registerLocaleData(localeDe, 'de-DE');
 registerLocaleData(localeCH, 'de-CH');
 
