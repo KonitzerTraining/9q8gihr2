@@ -17,6 +17,7 @@ const customersMock: Customer[] = [
 export class CustomerListComponent implements OnInit {
   
   public errorMessage: string | null = null;
+  public loading = false;
   public customers: Customer[] = [];
 
   // Dependency Injection
@@ -29,14 +30,17 @@ export class CustomerListComponent implements OnInit {
   }
 
   loadCustomers() {
+    this.loading = true;
     this.errorMessage = null;
     this.customerService.getAll()
       .subscribe({
         next: (customers) => {
           this.customers = customers;
+          this.loading = false;
         },
         error: (e: Error) => {
           this.errorMessage = e.message;
+          this.loading = false;
         }
       });
   }

@@ -1,9 +1,15 @@
 <h2>List of Customers</h2>
 
+<div class="d-flex justify-content-between my-4">
+    <button class="btn btn-primary">
+        New
+    </button>
+    <button class="btn btn-outline-secondary" (click)="loadCustomers()">Reload</button>
+</div>
+
 <app-error-box [message]="errorMessage"></app-error-box>
 
-
-@if(errorMessage === null) {
+@if(errorMessage === null && !loading) {
 <table class="table table-striped">
     <thead>
         <tr>
