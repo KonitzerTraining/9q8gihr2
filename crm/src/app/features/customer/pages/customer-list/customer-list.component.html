@@ -8,6 +8,7 @@
 </div>
 
 <app-error-box [message]="errorMessage"></app-error-box>
+<app-loading-indicator [show]="loading"></app-loading-indicator>
 
 @if(errorMessage === null && !loading) {
 <table class="table table-striped">
