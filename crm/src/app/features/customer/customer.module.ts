@@ -8,6 +8,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { CoreModule } from '../../core/core.module';
 import { CustomerNewComponent } from './pages/customer-new/customer-new.component';
 import { CustomerEditComponent } from './pages/customer-edit/customer-edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,8 @@ import { CustomerEditComponent } from './pages/customer-edit/customer-edit.compo
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+
     // Shared Module
     CoreModule,
     CustomerRoutingModule
