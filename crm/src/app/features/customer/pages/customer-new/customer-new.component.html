@@ -1,5 +1,9 @@
 <h2>New Customer</h2>
 
+<app-error-box [message]="errorMessage"></app-error-box>
+<app-loading-indicator [show]="loading"></app-loading-indicator>
+
+@if(!loading) {
 <form (ngSubmit)="formSubmit()" [formGroup]="customerFormGroup">
     <div class="mb-3">
         <label for="name" class="form-label">Name:</label>
@@ -20,3 +24,4 @@
         <button class="btn btn-primary" type="submit" [disabled]="customerFormGroup.invalid">Submit</button>
     </div>
 </form>
+}
