@@ -4,5 +4,5 @@
 <app-loading-indicator [show]="loading"></app-loading-indicator>
 
 @if(!loading) {
-    <app-customer-form></app-customer-form>
+    <app-customer-form (customerSubmit)="createCustomer($event)"></app-customer-form>
 }

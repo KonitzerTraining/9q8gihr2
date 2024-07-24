@@ -21,29 +21,9 @@
       "credit": 350
     },
     {
-      "name": "test",
-      "credit": 234,
-      "id": 8
-    },
-    {
       "name": "test2",
       "credit": 123,
       "id": 9
-    },
-    {
-      "name": "awetsgrfhdb",
-      "credit": 534,
-      "id": 20
-    },
-    {
-      "name": "1neu",
-      "credit": 123,
-      "id": 11
-    },
-    {
-      "name": "asdf",
-      "credit": 234,
-      "id": 12
     },
     {
       "name": "ozit7r56",
@@ -54,6 +34,16 @@
       "name": "hello",
       "credit": 432,
       "id": 26
+    },
+    {
+      "name": "Peter",
+      "credit": 300,
+      "id": 27
+    },
+    {
+      "name": "asdf",
+      "credit": 234,
+      "id": 28
     }
   ]
 }
