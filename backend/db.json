@@ -1,22 +1,21 @@
 {
   "customers": [
     {
-      "id": 3,
-      "name": "Tim Taler",
-      "credit": 300
-    },{
       "id": 4,
       "name": "Lee",
       "credit": 400
-    },{
+    },
+    {
       "id": 5,
       "name": "Matt",
       "credit": 3400
-    },{
+    },
+    {
       "id": 6,
       "name": "Stan",
       "credit": 20
-    },{
+    },
+    {
       "id": 7,
       "name": "Roy",
       "credit": 350

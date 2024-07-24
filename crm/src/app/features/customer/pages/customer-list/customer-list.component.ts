@@ -15,7 +15,7 @@ const customersMock: Customer[] = [
   templateUrl: './customer-list.component.html'
 })
 export class CustomerListComponent implements OnInit {
-  
+
   public errorMessage: string | null = null;
   public loading = false;
   public customers: Customer[] = [];
@@ -23,7 +23,7 @@ export class CustomerListComponent implements OnInit {
   // Dependency Injection
   constructor(
     private customerService: CustomerService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.loadCustomers();
@@ -45,4 +45,22 @@ export class CustomerListComponent implements OnInit {
       });
   }
 
+  deleteCustomer(id: number) {
+    this.loading = true;
+    this.errorMessage = null;
+    this.customerService.deleteById(id)
+      .subscribe({
+        next: () => {
+          // this.loadCustomers();
+          this.customers = this.customers.filter((customer) => {
+            return customer.id !== id
+          });
+          this.loading = false;
+        },
+        error: (e: Error) => {
+          this.errorMessage = e.message;
+          this.loading = false;
+        }
+      });
+  }
 }
