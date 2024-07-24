@@ -1,1 +1,8 @@
-<p>customer-edit works!</p>
+<h2>Edit Customer with ID {{ id }}</h2>
+
+<app-error-box [message]="errorMessage"></app-error-box>
+<app-loading-indicator [show]="loading"></app-loading-indicator>
+
+<pre>
+{{customer | json}}
+</pre>
