@@ -15,6 +15,8 @@
     </div>
     <div class="mb-3 d-flex justify-content-between">
         <button class="btn btn-outline-secondary" type="reset">Reset</button>
-        <button class="btn btn-primary" type="submit" [disabled]="customerFormGroup.invalid">Submit</button>
+        <button class="btn btn-primary" type="submit" [disabled]="customerFormGroup.invalid">
+            <ng-content></ng-content>
+        </button>
     </div>
 </form>

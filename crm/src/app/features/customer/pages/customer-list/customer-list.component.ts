@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from '../../model/customer';
 import { CustomerService } from '../../services/customer.service';
-
+/* 
 const customersMock: Customer[] = [
   {
     id: 4,
     name: 'Tim',
     credit: 25
   }
-];
+]; */
 
 @Component({
   selector: 'app-customer-list',

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Customer } from '../../model/customer';
 
@@ -7,9 +7,12 @@ import { Customer } from '../../model/customer';
   templateUrl: './customer-form.component.html',
   styleUrl: './customer-form.component.scss'
 })
-export class CustomerFormComponent {
+export class CustomerFormComponent implements OnInit {
 
   customerFormGroup: FormGroup;
+
+  @Input()
+  data ?: Customer;
 
   @Output()
   customerSubmit = new EventEmitter<Partial<Customer>>();
@@ -31,6 +34,12 @@ export class CustomerFormComponent {
         ]
       ],
     });
+  }
+  
+  ngOnInit(): void {
+    if(this.data !== void 0 ) {
+      this.customerFormGroup.patchValue(this.data);
+    }
   }
 
   formSubmit() {

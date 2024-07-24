@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
 export class LoadingIndicatorComponent {
   
   @Input()
-  show: boolean = false;
+  show = false;
 
 }

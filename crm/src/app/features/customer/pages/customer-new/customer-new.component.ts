@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import type { Customer } from '../../model/customer';
 import { CustomerService } from '../../services/customer.service';
 import { Router } from '@angular/router';
