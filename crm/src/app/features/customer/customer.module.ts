@@ -9,13 +9,15 @@ import { CoreModule } from '../../core/core.module';
 import { CustomerNewComponent } from './pages/customer-new/customer-new.component';
 import { CustomerEditComponent } from './pages/customer-edit/customer-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CustomerFormComponent } from './forms/customer-form/customer-form.component';
 
 @NgModule({
   declarations: [
     CustomerIndexComponent,
     CustomerListComponent,
     CustomerNewComponent,
-    CustomerEditComponent
+    CustomerEditComponent,
+    CustomerFormComponent
   ],
   imports: [
     CommonModule,

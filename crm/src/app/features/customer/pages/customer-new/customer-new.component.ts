@@ -12,36 +12,13 @@ export class CustomerNewComponent {
 
   public errorMessage: string | null = null;
   public loading = false;
-  customerFormGroup: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
+
     private customerService: CustomerService,
     private router: Router,
-  ) {
-    this.customerFormGroup = this.fb.group({
-      name: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(2)
-        ]
-      ],
-      credit: [
-        0,
-        [
-          Validators.required,
-          Validators.min(0)
-        ]
-      ],
-    });
-  }
-
-  formSubmit() {
-    console.log(this.customerFormGroup.value);
-    this.createCustomer(this.customerFormGroup.value);
-  }
-
+  ) {}
+  
   createCustomer(customer: Partial<Customer>) {
     // this.router.navigate(['/dashboard']);
     this.loading = true;
