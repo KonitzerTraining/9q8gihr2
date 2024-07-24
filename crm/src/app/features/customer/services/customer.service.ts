@@ -6,9 +6,15 @@ import { environment } from '../../../../environments/environment';
 
 const url: string = environment.api + 'customers/';
 
-@Injectable({
+
+Injectable({
   providedIn: 'root'
 })
+/** 
+ * Wird verwendet in Customer-Komponenten
+ * 
+ * @class CustomerSerfvice
+ */
 export class CustomerService {
 
   constructor(
