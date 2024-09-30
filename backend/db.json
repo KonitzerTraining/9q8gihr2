@@ -6,9 +6,9 @@
       "credit": 400
     },
     {
-      "id": 5,
       "name": "Matt",
-      "credit": 3400
+      "credit": 5000,
+      "id": 5
     },
     {
       "id": 6,
@@ -19,11 +19,6 @@
       "id": 7,
       "name": "Roy",
       "credit": 350
-    },
-    {
-      "name": "test2",
-      "credit": 123,
-      "id": 9
     },
     {
       "name": "Bart",
@@ -44,6 +39,11 @@
       "name": "Pete",
       "credit": 250.34,
       "id": 28
+    },
+    {
+      "name": "Tom Taylor",
+      "credit": 3000,
+      "id": 29
     }
   ]
 }
