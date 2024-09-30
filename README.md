@@ -1,3 +1,3 @@
-# Angular Grundlagen
+# Angular Grundlagen und Aufbau
 
-Init
+Projekte für Angular-Training
