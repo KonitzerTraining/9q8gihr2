@@ -1,14 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Customer } from '../../model/customer';
 import { CustomerService } from '../../services/customer.service';
-/* 
-const customersMock: Customer[] = [
-  {
-    id: 4,
-    name: 'Tim',
-    credit: 25
-  }
-]; */
 
 @Component({
   selector: 'app-customer-list',
@@ -21,9 +13,7 @@ export class CustomerListComponent implements OnInit {
   public customers: Customer[] = [];
 
   // Dependency Injection
-  constructor(
-    private customerService: CustomerService
-  ) { }
+  customerService =  inject(CustomerService);
 
   ngOnInit(): void {
     this.loadCustomers();
