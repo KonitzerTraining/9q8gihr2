@@ -37,8 +37,13 @@ export const reducer = createReducer(
   }
   ),
 
-  /*
-on(ProductActions.loadProductsFailure, (state, action) => state), */
+  on(ProductActions.loadProductsFailure, (state, {error}) => {
+    return {
+      ...state,
+      loading: false,
+      errorMessage: error,
+    };
+  }),
 );
 
 export const productFeature = createFeature({
