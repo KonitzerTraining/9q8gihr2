@@ -37,7 +37,7 @@ export const reducer = createReducer(
   }
   ),
 
-  on(ProductActions.loadProductsFailure, (state, {error}) => {
+  on(ProductActions.loadProductsFailure, (state, { error }) => {
     return {
       ...state,
       loading: false,

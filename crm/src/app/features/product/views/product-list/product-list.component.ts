@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-/* import { ProductService } from '../../services/product.service'; */
 import { Store } from '@ngrx/store';
-import { selectLoading, selectProducts } from '../../state/selectors/product.selectors';
+import { selectErrorMessage, selectLoading, selectProducts } from '../../state/selectors/product.selectors';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -10,9 +10,7 @@ import { selectLoading, selectProducts } from '../../state/selectors/product.sel
 })
 export class ProductListComponent {
 
-  //products$ = inject(ProductService).getProducts();
-
   products$ = inject(Store).select(selectProducts);
-  loading$ = inject(Store).select(selectLoading);
+  loading$: Observable<boolean> = inject(Store).select(selectLoading);
+  errorMessage$ = inject(Store).select(selectErrorMessage);
 }
- 

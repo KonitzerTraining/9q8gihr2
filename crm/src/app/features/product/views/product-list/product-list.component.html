@@ -1,6 +1,4 @@
-<pre>
-{{
-    products$ | async | json
-}}
-</pre>
-{{ loading$ | async }}
+<app-error-box [message]="errorMessage$ | async"></app-error-box>
+<app-loading-indicator [show]="loading$ | async"></app-loading-indicator>
+
+
