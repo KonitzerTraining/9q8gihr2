@@ -12,7 +12,12 @@ import { CustomerModule } from './features/customer/customer.module';
 import { registerLocaleData } from '@angular/common';
 
 import localeDe from '@angular/common/locales/de';
-import { LOCALE_ID } from '@angular/core';
+import { LOCALE_ID, isDevMode } from '@angular/core';
+import { ProductModule } from './features/product/product.module';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 registerLocaleData(localeDe, 'de-DE');
 
@@ -28,12 +33,21 @@ registerLocaleData(localeDe, 'de-DE');
     // Feature Module
     StartModule,
     CustomerModule,
+    ProductModule,
 
     // HelpModule,
     LegalModule,
 
     // Basic Routing
-    AppRoutingModule
+    AppRoutingModule,
+
+    StoreModule.forRoot({}, {}),
+
+    EffectsModule.forRoot([]),
+
+    StoreRouterConnectingModule.forRoot(),
+
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [
     {
