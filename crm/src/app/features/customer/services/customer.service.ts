@@ -49,7 +49,7 @@ export class CustomerService {
     return this.http.patch(url + id, customer)
   } */
   
-    deleteById(id: number) {
+  deleteById(id: number) {
     return this.http.delete(url + id);
   }
 }

@@ -13,7 +13,11 @@ export class CustomerListComponent implements OnInit {
   public customers: Customer[] = [];
 
   // Dependency Injection
-  customerService =  inject(CustomerService);
+  // customerService =  inject(CustomerService);
+  
+  constructor(
+    private customerService: CustomerService
+  ) { }
 
   ngOnInit(): void {
     this.loadCustomers();
