@@ -12,12 +12,7 @@ export interface State {
 }
 
 export const initialState: State = {
-  products: [{
-    id: 3,
-    name: 'Produkt 3',
-    price: 3.99,
-    description: 'Das dritte Produkt',
-  }],
+  products: [],
   loading: false,
   errorMessage: null,
 };
@@ -32,9 +27,18 @@ export const reducer = createReducer(
     };
   }
   ),
+
+  on(ProductActions.loadProductsSuccess, (state, { products }) => {
+    return {
+      ...state,
+      products,
+      loading: false,
+    };
+  }
+  ),
+
   /*
-  on(ProductActions.loadProductsSuccess, (state, action) => state),
-  on(ProductActions.loadProductsFailure, (state, action) => state), */
+on(ProductActions.loadProductsFailure, (state, action) => state), */
 );
 
 export const productFeature = createFeature({

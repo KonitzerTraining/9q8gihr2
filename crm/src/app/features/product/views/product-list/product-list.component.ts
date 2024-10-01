@@ -11,7 +11,8 @@ import { selectLoading, selectProducts } from '../../state/selectors/product.sel
 export class ProductListComponent {
 
   //products$ = inject(ProductService).getProducts();
-  
+
   products$ = inject(Store).select(selectProducts);
   loading$ = inject(Store).select(selectLoading);
 }
+ 
