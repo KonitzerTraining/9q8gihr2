@@ -1,10 +1,10 @@
 import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, concatMap, exhaustMap, tap } from 'rxjs/operators';
-import { Observable, EMPTY, of } from 'rxjs';
+import { catchError, map, exhaustMap, tap } from 'rxjs/operators';
+import { of } from 'rxjs';
 import { AuthActions } from '../actions/auth.actions';
 import { AuthService } from '../../services/auth.service';
-import { ROUTER_CANCEL } from '@ngrx/router-store';
+
 import { Router } from '@angular/router';
 
 @Injectable()
@@ -14,11 +14,20 @@ export class AuthEffects {
   #authService: AuthService = inject(AuthService);
   #router: Router = inject(Router);
 
+  checkRoute$ = createEffect(() => {
+    return this.#actions$.pipe(
+      tap((action) => {
+        console.log('action', action);
+      })
+    );
+  }, { dispatch: false });
+
+
   login$ = createEffect(() => {
     return this.#actions$.pipe(
 
       ofType(AuthActions.login),
-      exhaustMap(({login}) =>
+      exhaustMap(({ login }) =>
         this.#authService.getUser(login).pipe(
           map(user => AuthActions.loginSuccess({ user })),
           catchError(error => of(AuthActions.loginFailure({ error }))))
@@ -33,6 +42,6 @@ export class AuthEffects {
         this.#router.navigate(['/login']);
       })
     );
-  }, { dispatch: false }); 
-  
+  }, { dispatch: false });
+
 }

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { AuthActions } from '../features/auth/state/actions/auth.actions';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { selectIsAuthenticated } from '../features/auth/state/selectors/auth.selectors';
+import { selectIsAuthenticated, selectUserName } from '../features/auth/state/selectors/auth.selectors';
 
 @Component({
   selector: 'app-navigation',
@@ -11,7 +11,9 @@ import { selectIsAuthenticated } from '../features/auth/state/selectors/auth.sel
 })
 export class NavigationComponent {
   #store: Store = inject(Store);
+  
   isAuthenticated$: Observable<boolean> = this.#store.select(selectIsAuthenticated);
+  userName$ = this.#store.select(selectUserName);
 
 
   logout(): void {

@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: CustomerIndexComponent,
-     canActivate: [authGuard],
+    canActivate: [authGuard],
     children: [
       {
         path: '',
