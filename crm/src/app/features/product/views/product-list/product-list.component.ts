@@ -22,6 +22,6 @@ export class ProductListComponent {
   }
 
   deleteProduct(productId: number) {
-    console.log('delete product', productId);
+    this.#store.dispatch(ProductActions.deleteProduct({ productId }));
   }
 }
