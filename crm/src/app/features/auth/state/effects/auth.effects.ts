@@ -1,25 +1,27 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, concatMap } from 'rxjs/operators';
+import { catchError, map, concatMap, exhaustMap } from 'rxjs/operators';
 import { Observable, EMPTY, of } from 'rxjs';
 import { AuthActions } from '../actions/auth.actions';
+import { AuthService } from '../../services/auth.service';
 
 
 @Injectable()
 export class AuthEffects {
 
-/*   loadAuths$ = createEffect(() => {
-    return this.actions$.pipe(
+  #actions$: Actions = inject(Actions);
+  #authService: AuthService = inject(AuthService);
 
-      ofType(AuthActions.loadAuths),
-      concatMap(() =>
-         EMPTY.pipe(
-          map(data => AuthActions.loadAuthsSuccess({ data })),
-          catchError(error => of(AuthActions.loadAuthsFailure({ error }))))
+  login$ = createEffect(() => {
+    return this.#actions$.pipe(
+
+      ofType(AuthActions.login),
+      exhaustMap(({login}) =>
+        this.#authService.getUser(login).pipe(
+          map(user => AuthActions.loginSuccess({ user })),
+          catchError(error => of(AuthActions.loginFailure({ error }))))
       )
     );
-  }); */
+  });
 
-
-  constructor(private actions$: Actions) { }
 }
