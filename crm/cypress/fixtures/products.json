@@ -1,0 +1,14 @@
+[
+    {
+        "id": 4,
+        "name": "TEST: MTB Light",
+        "price": 2.5,
+        "description": "A light bike"
+      },
+      {
+        "id": 5,
+        "name": "TEST: Cargo Light",
+        "price": 2.5,
+        "description": "A bike"
+      }
+]

@@ -89,7 +89,7 @@
   <li class="breadcrumb-item">Components</li>
   <li class="breadcrumb-item"
   >
-  NavigationComponent</li>
+  ProductListComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -116,7 +116,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/navigation/navigation.component.ts</code>
+    <code>src/app/features/product/views/product-list/product-list.component.ts</code>
 </p>
 
 
@@ -142,7 +142,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-navigation</code></td>
+                <td class="col-md-9"><code>app-product-list</code></td>
             </tr>
 
 
@@ -152,14 +152,14 @@
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./navigation.component.html</code></td>
+                <td class="col-md-9"><code>./product-list.component.html</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">styleUrl</td>
-                <td class="col-md-9"><code>./navigation.component.scss</code></td>
+                <td class="col-md-9"><code>./product-list.component.scss</code></td>
             </tr>
 
 
@@ -187,10 +187,13 @@
                                 <a href="##store" >#store</a>
                             </li>
                             <li>
-                                <a href="#isAuthenticated$" >isAuthenticated$</a>
+                                <a href="#errorMessage$" >errorMessage$</a>
                             </li>
                             <li>
-                                <a href="#userName$" >userName$</a>
+                                <a href="#loading$" >loading$</a>
+                            </li>
+                            <li>
+                                <a href="#products$" >products$</a>
                             </li>
                         </ul>
                     </td>
@@ -205,7 +208,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#logout" >logout</a>
+                                <a href="#deleteProduct" >deleteProduct</a>
+                            </li>
+                            <li>
+                                <a href="#loadProducts" >loadProducts</a>
                             </li>
                         </ul>
                     </td>
@@ -233,24 +239,91 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="logout"></a>
+                    <a name="deleteProduct"></a>
                     <span class="name">
-                        <span ><b>logout</b></span>
-                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>deleteProduct</b></span>
+                        <a href="#deleteProduct"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>logout()</code>
+<code>deleteProduct(productId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="19"
-                                    class="link-to-prism">src/app/navigation/navigation.component.ts:19</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="24"
+                                    class="link-to-prism">src/app/features/product/views/product-list/product-list.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>productId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadProducts"></a>
+                    <span class="name">
+                        <span ><b>loadProducts</b></span>
+                        <a href="#loadProducts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadProducts()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="20"
+                                    class="link-to-prism">src/app/features/product/views/product-list/product-list.component.ts:20</a></div>
                         </td>
                     </tr>
 
@@ -297,7 +370,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/navigation/navigation.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/features/product/views/product-list/product-list.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -308,10 +381,35 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isAuthenticated$"></a>
+                    <a name="errorMessage$"></a>
                     <span class="name">
-                        <span ><b>isAuthenticated$</b></span>
-                        <a href="#isAuthenticated$"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>errorMessage$</b></span>
+                        <a href="#errorMessage$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.#store.select(selectErrorMessage)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/features/product/views/product-list/product-list.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loading$"></a>
+                    <span class="name">
+                        <span ><b>loading$</b></span>
+                        <a href="#loading$"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -323,12 +421,12 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>this.#store.select(selectIsAuthenticated)</code>
+                        <i>Default value : </i><code>this.#store.select(selectLoading)</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/navigation/navigation.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/features/product/views/product-list/product-list.component.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -339,21 +437,21 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="userName$"></a>
+                    <a name="products$"></a>
                     <span class="name">
-                        <span ><b>userName$</b></span>
-                        <a href="#userName$"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>products$</b></span>
+                        <a href="#products$"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>this.#store.select(selectUserName)</code>
+                        <i>Default value : </i><code>this.#store.select(selectProducts)</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/navigation/navigation.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/features/product/views/product-list/product-list.component.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -367,74 +465,76 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject } from &#x27;@angular/core&#x27;;
-import { AuthActions } from &#x27;../features/auth/state/actions/auth.actions&#x27;;
 import { Store } from &#x27;@ngrx/store&#x27;;
+import { selectErrorMessage, selectLoading, selectProducts } from &#x27;../../state/selectors/product.selectors&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
-import { selectIsAuthenticated, selectUserName } from &#x27;../features/auth/state/selectors/auth.selectors&#x27;;
+import { ProductActions } from &#x27;../../state/actions/product.actions&#x27;;
 
 @Component({
-  selector: &#x27;app-navigation&#x27;,
-  templateUrl: &#x27;./navigation.component.html&#x27;,
-  styleUrl: &#x27;./navigation.component.scss&#x27;
+  selector: &#x27;app-product-list&#x27;,
+  templateUrl: &#x27;./product-list.component.html&#x27;,
+  styleUrl: &#x27;./product-list.component.scss&#x27;
 })
-export class NavigationComponent {
+export class ProductListComponent {
+
+
   #store: Store &#x3D; inject(Store);
-  
-  isAuthenticated$: Observable&lt;boolean&gt; &#x3D; this.#store.select(selectIsAuthenticated);
-  userName$ &#x3D; this.#store.select(selectUserName);
+  products$ &#x3D; this.#store.select(selectProducts);
+  loading$: Observable&lt;boolean&gt; &#x3D; this.#store.select(selectLoading);
+  errorMessage$ &#x3D; this.#store.select(selectErrorMessage);
 
+  loadProducts() {
+    this.#store.dispatch(ProductActions.loadProducts());
+  }
 
-  logout(): void {
-    this.#store.dispatch(AuthActions.logout());
+  deleteProduct(productId: number) {
+    this.#store.dispatch(ProductActions.deleteProduct({ productId }));
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;nav class&#x3D;&quot;navbar navbar-expand-sm bg-body-tertiary&quot;&gt;
-  &lt;div class&#x3D;&quot;container-fluid&quot;&gt;
-    &lt;a class&#x3D;&quot;navbar-brand&quot; href&#x3D;&quot;#&quot;&gt;CRM&lt;/a&gt;
-    &lt;button class&#x3D;&quot;navbar-toggler&quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;collapse&quot; data-bs-target&#x3D;&quot;#navbarSupportedContent&quot;
-      aria-controls&#x3D;&quot;navbarSupportedContent&quot; aria-expanded&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Toggle navigation&quot;&gt;
-      &lt;span class&#x3D;&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;h2&gt;List of Products&lt;/h2&gt;
+
+&lt;div class&#x3D;&quot;d-flex justify-content-between my-4&quot;&gt;
+    &lt;button class&#x3D;&quot;btn btn-primary&quot; routerLink&#x3D;&quot;new&quot;&gt;
+        New
     &lt;/button&gt;
-    &lt;div class&#x3D;&quot;collapse navbar-collapse&quot; id&#x3D;&quot;navbarSupportedContent&quot;&gt;
-      &lt;ul class&#x3D;&quot;navbar-nav me-auto mb-2 mb-lg-0&quot;&gt;
+    &lt;button class&#x3D;&quot;btn btn-outline-secondary&quot; (click)&#x3D;&quot;loadProducts()&quot;&gt;Reload&lt;/button&gt;
+&lt;/div&gt;
 
-        &lt;li class&#x3D;&quot;nav-item&quot;&gt;
-          &lt;a class&#x3D;&quot;nav-link&quot; routerLink&#x3D;&quot;/start&quot;&gt;Start&lt;/a&gt;
-        &lt;/li&gt;
+&lt;app-error-box [message]&#x3D;&quot;errorMessage$ | async&quot;&gt;&lt;/app-error-box&gt;
+&lt;app-loading-indicator [show]&#x3D;&quot;loading$ | async&quot;&gt;&lt;/app-loading-indicator&gt;
 
-        @if (isAuthenticated$ | async) {
-        &lt;li class&#x3D;&quot;nav-item&quot;&gt;
-          &lt;a class&#x3D;&quot;nav-link&quot; routerLink&#x3D;&quot;/dashboard&quot;&gt;Customers&lt;/a&gt;
-        &lt;/li&gt;
-
-        &lt;li class&#x3D;&quot;nav-item&quot;&gt;
-          &lt;a id&#x3D;&quot;nav_products&quot; class&#x3D;&quot;nav-link&quot; routerLink&#x3D;&quot;/product&quot;&gt;Produkte&lt;/a&gt;
-        &lt;/li&gt;
-        }
-        &lt;li class&#x3D;&quot;nav-item&quot;&gt;
-          &lt;a class&#x3D;&quot;nav-link&quot; routerLink&#x3D;&quot;/about&quot;&gt;About&lt;/a&gt;
-        &lt;/li&gt;
-
-        &lt;li class&#x3D;&quot;nav-item&quot;&gt;
-          &lt;a class&#x3D;&quot;nav-link&quot; routerLink&#x3D;&quot;/help&quot;&gt;Help&lt;/a&gt;
-        &lt;/li&gt;
-
-      &lt;/ul&gt;
-
-      @if (isAuthenticated$ | async) {
-      &lt;span class&#x3D;&quot;pe-2&quot;&gt;Eingeloggt als: {{ (userName$ | async) }}&lt;/span&gt;
-      &lt;button id&#x3D;&quot;btn_logout&quot; class&#x3D;&quot;btn btn-outline-secondary&quot; (click)&#x3D;&quot;logout()&quot;&gt;Logout&lt;/button&gt;
-      } @else {
-      &lt;button id&#x3D;&quot;btn_login&quot; class&#x3D;&quot;btn btn-warning&quot; routerLink&#x3D;&quot;/login&quot;&gt;Login&lt;/button&gt;
-      }
-
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/nav&gt;</code></pre>
+@if((errorMessage$ | async) &#x3D;&#x3D;&#x3D; null &amp;&amp; (loading$ | async) !&#x3D;&#x3D; true) {
+    &lt;table class&#x3D;&quot;table table-striped&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;#&lt;/th&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Preis&lt;/th&gt;
+                &lt;th&gt;Beschreibung&lt;/th&gt;
+                &lt;th&gt;&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            @for (product of (products$ | async); track product.id) {
+            &lt;tr&gt;
+                &lt;td&gt;{{ product.id }}&lt;/td&gt;
+                &lt;td&gt;{{ product.name }}&lt;/td&gt;
+                &lt;td class&#x3D;&quot;text-end&quot;&gt;{{ product.price| currency:&#x27;EUR&#x27;:&#x27;symbol&#x27;:&#x27;1.2-2&#x27;}}&lt;/td&gt;
+                &lt;td&gt;{{ product.description }}&lt;/td&gt;
+                &lt;td class&#x3D;&quot;text-end&quot;&gt;
+                    &lt;button class&#x3D;&quot;btn btn-sm btn-danger&quot; (click)&#x3D;&quot;deleteProduct(product.id)&quot;&gt;Delete&lt;/button&gt;
+                    
+                    &lt;!-- &lt;button class&#x3D;&quot;btn btn-sm btn-primary me-2&quot; [routerLink]&#x3D;&quot;[&#x27;edit&#x27;, product.id]&quot;&gt;Edit&lt;/button&gt; --&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            }
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+}</code></pre>
     </div>
 
 
@@ -463,10 +563,10 @@ export class NavigationComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nav class="navbar navbar-expand-sm bg-body-tertiary">  <div class="container-fluid">    <a class="navbar-brand" href="#">CRM</a>    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">      <span class="navbar-toggler-icon"></span>    </button>    <div class="collapse navbar-collapse" id="navbarSupportedContent">      <ul class="navbar-nav me-auto mb-2 mb-lg-0">        <li class="nav-item">          <a class="nav-link" routerLink="/start">Start</a>        </li>        @if (isAuthenticated$ | async) {        <li class="nav-item">          <a class="nav-link" routerLink="/dashboard">Customers</a>        </li>        <li class="nav-item">          <a id="nav_products" class="nav-link" routerLink="/product">Produkte</a>        </li>        }        <li class="nav-item">          <a class="nav-link" routerLink="/about">About</a>        </li>        <li class="nav-item">          <a class="nav-link" routerLink="/help">Help</a>        </li>      </ul>      @if (isAuthenticated$ | async) {      <span class="pe-2">Eingeloggt als: {{ (userName$ | async) }}</span>      <button id="btn_logout" class="btn btn-outline-secondary" (click)="logout()">Logout</button>      } @else {      <button id="btn_login" class="btn btn-warning" routerLink="/login">Login</button>      }    </div>  </div></nav></div>'
+        var COMPONENT_TEMPLATE = '<div><h2>List of Products</h2><div class="d-flex justify-content-between my-4">    <button class="btn btn-primary" routerLink="new">        New    </button>    <button class="btn btn-outline-secondary" (click)="loadProducts()">Reload</button></div><app-error-box [message]="errorMessage$ | async"></app-error-box><app-loading-indicator [show]="loading$ | async"></app-loading-indicator>@if((errorMessage$ | async) === null && (loading$ | async) !== true) {    <table class="table table-striped">        <thead>            <tr>                <th>#</th>                <th>Name</th>                <th>Preis</th>                <th>Beschreibung</th>                <th></th>            </tr>        </thead>        <tbody>            @for (product of (products$ | async); track product.id) {            <tr>                <td>{{ product.id }}</td>                <td>{{ product.name }}</td>                <td class="text-end">{{ product.price| currency:\'EUR\':\'symbol\':\'1.2-2\'}}</td>                <td>{{ product.description }}</td>                <td class="text-end">                    <button class="btn btn-sm btn-danger" (click)="deleteProduct(product.id)">Delete</button>                                        <!-- <button class="btn btn-sm btn-primary me-2" [routerLink]="[\'edit\', product.id]">Edit</button> -->                </td>            </tr>            }        </tbody>    </table>}</div>'
     var COMPONENTS = [{'name': 'AboutPageComponent', 'selector': 'app-about-page'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CustomerEditComponent', 'selector': 'app-customer-edit'},{'name': 'CustomerFormComponent', 'selector': 'app-customer-form'},{'name': 'CustomerIndexComponent', 'selector': 'app-customer-index'},{'name': 'CustomerListComponent', 'selector': 'app-customer-list'},{'name': 'CustomerNewComponent', 'selector': 'app-customer-new'},{'name': 'ErrorBoxComponent', 'selector': 'app-error-box'},{'name': 'HelpIndexComponent', 'selector': 'app-help-index'},{'name': 'LoadingIndicatorComponent', 'selector': 'app-loading-indicator'},{'name': 'LoginPageComponent', 'selector': 'app-login-page'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'NotFoundPageComponent', 'selector': 'app-not-found-page'},{'name': 'ProductEditComponent', 'selector': 'app-product-edit'},{'name': 'ProductIndexComponent', 'selector': 'app-product-index'},{'name': 'ProductListComponent', 'selector': 'app-product-list'},{'name': 'ProductNewComponent', 'selector': 'app-product-new'},{'name': 'StartPageComponent', 'selector': 'app-start-page'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'NavigationComponent'};
+    var ACTUAL_COMPONENT = {'name': 'ProductListComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -512,7 +612,7 @@ export class NavigationComponent {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'NavigationComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProductListComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

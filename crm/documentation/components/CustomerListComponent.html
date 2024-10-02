@@ -189,9 +189,6 @@
                                 <a href="#customers" >customers</a>
                             </li>
                             <li>
-                                <a href="#customerService" >customerService</a>
-                            </li>
-                            <li>
                                     <span class="modifier">Public</span>
                                 <a href="#errorMessage" >errorMessage</a>
                             </li>
@@ -232,6 +229,54 @@
     </table>
 </section>
 
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(customerService: <a href="../injectables/CustomerService.html" target="_self">CustomerService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/features/customer/pages/customer-list/customer-list.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>customerService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CustomerService.html" target="_self" >CustomerService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -262,8 +307,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="38"
-                                    class="link-to-prism">src/app/features/customer/pages/customer-list/customer-list.component.ts:38</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="42"
+                                    class="link-to-prism">src/app/features/customer/pages/customer-list/customer-list.component.ts:42</a></div>
                         </td>
                     </tr>
 
@@ -329,8 +374,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="22"
-                                    class="link-to-prism">src/app/features/customer/pages/customer-list/customer-list.component.ts:22</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="26"
+                                    class="link-to-prism">src/app/features/customer/pages/customer-list/customer-list.component.ts:26</a></div>
                         </td>
                     </tr>
 
@@ -366,8 +411,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="18"
-                                    class="link-to-prism">src/app/features/customer/pages/customer-list/customer-list.component.ts:18</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="22"
+                                    class="link-to-prism">src/app/features/customer/pages/customer-list/customer-list.component.ts:22</a></div>
                         </td>
                     </tr>
 
@@ -415,31 +460,6 @@
                     <tr>
                         <td class="col-md-4">
                                 <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/features/customer/pages/customer-list/customer-list.component.ts:13</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="customerService"></a>
-                    <span class="name">
-                        <span ><b>customerService</b></span>
-                        <a href="#customerService"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>inject(CustomerService)</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/features/customer/pages/customer-list/customer-list.component.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -525,7 +545,11 @@ export class CustomerListComponent implements OnInit {
   public customers: Customer[] &#x3D; [];
 
   // Dependency Injection
-  customerService &#x3D;  inject(CustomerService);
+  // customerService &#x3D;  inject(CustomerService);
+  
+  constructor(
+    private customerService: CustomerService
+  ) { }
 
   ngOnInit(): void {
     this.loadCustomers();
@@ -636,7 +660,7 @@ export class CustomerListComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><h2>List of Customers</h2><div class="d-flex justify-content-between my-4">    <button class="btn btn-primary" routerLink="new">        New    </button>    <button class="btn btn-outline-secondary" (click)="loadCustomers()">Reload</button></div><app-error-box [message]="errorMessage"></app-error-box><app-loading-indicator [show]="loading"></app-loading-indicator>@if(errorMessage === null && !loading) {<table class="table table-striped">    <thead>        <tr>            <th>#</th>            <th>Name</th>            <th>Credit</th>            <th></th>        </tr>    </thead>    <tbody>        @for (customer of customers; track customer.id) {        <tr>            <td>{{ customer.id }}</td>            <td>{{ customer.name }}</td>            <td class="text-end">{{ customer.credit | currency:\'EUR\':\'symbol\':\'1.2-2\'}}</td>            <td class="text-end">                <button class="btn btn-sm btn-primary me-2" [routerLink]="[\'edit\', customer.id]">Edit</button>                <button class="btn btn-sm btn-danger" (click)="deleteCustomer(customer.id)">Delete</button>            </td>        </tr>        }    </tbody></table>}</div>'
-    var COMPONENTS = [{'name': 'AboutPageComponent', 'selector': 'app-about-page'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CustomerEditComponent', 'selector': 'app-customer-edit'},{'name': 'CustomerFormComponent', 'selector': 'app-customer-form'},{'name': 'CustomerIndexComponent', 'selector': 'app-customer-index'},{'name': 'CustomerListComponent', 'selector': 'app-customer-list'},{'name': 'CustomerNewComponent', 'selector': 'app-customer-new'},{'name': 'ErrorBoxComponent', 'selector': 'app-error-box'},{'name': 'HelpIndexComponent', 'selector': 'app-help-index'},{'name': 'LoadingIndicatorComponent', 'selector': 'app-loading-indicator'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'NotFoundPageComponent', 'selector': 'app-not-found-page'},{'name': 'StartPageComponent', 'selector': 'app-start-page'}];
+    var COMPONENTS = [{'name': 'AboutPageComponent', 'selector': 'app-about-page'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CustomerEditComponent', 'selector': 'app-customer-edit'},{'name': 'CustomerFormComponent', 'selector': 'app-customer-form'},{'name': 'CustomerIndexComponent', 'selector': 'app-customer-index'},{'name': 'CustomerListComponent', 'selector': 'app-customer-list'},{'name': 'CustomerNewComponent', 'selector': 'app-customer-new'},{'name': 'ErrorBoxComponent', 'selector': 'app-error-box'},{'name': 'HelpIndexComponent', 'selector': 'app-help-index'},{'name': 'LoadingIndicatorComponent', 'selector': 'app-loading-indicator'},{'name': 'LoginPageComponent', 'selector': 'app-login-page'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'NotFoundPageComponent', 'selector': 'app-not-found-page'},{'name': 'ProductEditComponent', 'selector': 'app-product-edit'},{'name': 'ProductIndexComponent', 'selector': 'app-product-index'},{'name': 'ProductListComponent', 'selector': 'app-product-list'},{'name': 'ProductNewComponent', 'selector': 'app-product-new'},{'name': 'StartPageComponent', 'selector': 'app-start-page'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CustomerListComponent'};
 </script>

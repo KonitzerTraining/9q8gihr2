@@ -441,14 +441,14 @@ export class CustomerNewComponent {
   ) {}
   
   createCustomer(customer: Partial&lt;Customer&gt;) {
-    // this.router.navigate([&#x27;/dashboard&#x27;]);
+  
     this.loading &#x3D; true;
     this.errorMessage &#x3D; null;
     this.customerService.postCustomer(customer)
       .subscribe({
         next: () &#x3D;&gt; {
           this.router.navigate([&#x27;/dashboard&#x27;]);
-          // this.loading &#x3D; false;
+    
         },
         error: (e: Error) &#x3D;&gt; {
           this.errorMessage &#x3D; e.message;
@@ -501,7 +501,7 @@ export class CustomerNewComponent {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><h2>New Customer</h2><app-error-box [message]="errorMessage"></app-error-box><app-loading-indicator [show]="loading"></app-loading-indicator>@if(!loading) {    <app-customer-form (customerSubmit)="createCustomer($event)">        Create Customer    </app-customer-form>}</div>'
-    var COMPONENTS = [{'name': 'AboutPageComponent', 'selector': 'app-about-page'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CustomerEditComponent', 'selector': 'app-customer-edit'},{'name': 'CustomerFormComponent', 'selector': 'app-customer-form'},{'name': 'CustomerIndexComponent', 'selector': 'app-customer-index'},{'name': 'CustomerListComponent', 'selector': 'app-customer-list'},{'name': 'CustomerNewComponent', 'selector': 'app-customer-new'},{'name': 'ErrorBoxComponent', 'selector': 'app-error-box'},{'name': 'HelpIndexComponent', 'selector': 'app-help-index'},{'name': 'LoadingIndicatorComponent', 'selector': 'app-loading-indicator'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'NotFoundPageComponent', 'selector': 'app-not-found-page'},{'name': 'StartPageComponent', 'selector': 'app-start-page'}];
+    var COMPONENTS = [{'name': 'AboutPageComponent', 'selector': 'app-about-page'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CustomerEditComponent', 'selector': 'app-customer-edit'},{'name': 'CustomerFormComponent', 'selector': 'app-customer-form'},{'name': 'CustomerIndexComponent', 'selector': 'app-customer-index'},{'name': 'CustomerListComponent', 'selector': 'app-customer-list'},{'name': 'CustomerNewComponent', 'selector': 'app-customer-new'},{'name': 'ErrorBoxComponent', 'selector': 'app-error-box'},{'name': 'HelpIndexComponent', 'selector': 'app-help-index'},{'name': 'LoadingIndicatorComponent', 'selector': 'app-loading-indicator'},{'name': 'LoginPageComponent', 'selector': 'app-login-page'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'NotFoundPageComponent', 'selector': 'app-not-found-page'},{'name': 'ProductEditComponent', 'selector': 'app-product-edit'},{'name': 'ProductIndexComponent', 'selector': 'app-product-index'},{'name': 'ProductListComponent', 'selector': 'app-product-list'},{'name': 'ProductNewComponent', 'selector': 'app-product-new'},{'name': 'StartPageComponent', 'selector': 'app-start-page'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CustomerNewComponent'};
 </script>

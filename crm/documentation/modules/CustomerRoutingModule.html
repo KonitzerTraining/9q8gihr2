@@ -135,11 +135,13 @@ import { CustomerIndexComponent } from &#x27;./customer-index.component&#x27;;
 import { CustomerListComponent } from &#x27;./pages/customer-list/customer-list.component&#x27;;
 import { CustomerNewComponent } from &#x27;./pages/customer-new/customer-new.component&#x27;;
 import { CustomerEditComponent } from &#x27;./pages/customer-edit/customer-edit.component&#x27;;
+import { authGuard } from &#x27;../auth/guards/auth.guard&#x27;;
 
 const routes: Routes &#x3D; [
   {
     path: &#x27;dashboard&#x27;,
     component: CustomerIndexComponent,
+    canActivate: [authGuard],
     children: [
       {
         path: &#x27;&#x27;,
