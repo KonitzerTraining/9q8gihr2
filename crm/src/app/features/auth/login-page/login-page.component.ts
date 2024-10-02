@@ -13,4 +13,9 @@ export class LoginPageComponent {
     password: ['30945tiogsj98', Validators.required]
   });
 
+  formSubmitHandler(): void {
+    console.log(
+      'LoginPageComponent.formSubmitHandler', 
+      this.loginFormGroup.value);
+  }
 }
