@@ -11,6 +11,18 @@
       "name": "MTB Ultra",
       "price": 2.500,
       "description": "A versatile bike"
+    },
+    {
+      "id": 4,
+      "name": "MTB Light",
+      "price": 2.500,
+      "description": "A light bike"
+    },
+    {
+      "id": 5,
+      "name": "Cargo Light",
+      "price": 2.500,
+      "description": "A bike"
     }
   ],
   "customers": [
