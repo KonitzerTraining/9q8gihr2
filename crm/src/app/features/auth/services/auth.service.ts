@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LoginData } from '../model/login-data';
-import { Observable, of } from 'rxjs';
+import { Observable, delay, of } from 'rxjs';
 import { User } from '../model/user';
 
 @Injectable({
@@ -14,6 +14,9 @@ export class AuthService {
     return of({
       id: 4,
       username: 'Tim Taler'
-    })
+    }).pipe(
+      // simulate network delay
+      delay(2000)
+    )
   }
 }
