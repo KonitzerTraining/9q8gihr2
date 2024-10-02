@@ -11,6 +11,7 @@ import { ProductActions } from '../../state/actions/product.actions';
 })
 export class ProductListComponent {
 
+
   #store: Store = inject(Store);
   products$ = this.#store.select(selectProducts);
   loading$: Observable<boolean> = this.#store.select(selectLoading);
@@ -18,5 +19,9 @@ export class ProductListComponent {
 
   loadProducts() {
     this.#store.dispatch(ProductActions.loadProducts());
+  }
+
+  deleteProduct(productId: number) {
+    console.log('delete product', productId);
   }
 }
