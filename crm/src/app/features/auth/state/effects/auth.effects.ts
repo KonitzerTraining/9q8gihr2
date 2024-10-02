@@ -25,5 +25,14 @@ export class AuthEffects {
       )
     );
   });
+
+  logout$ = createEffect(() => {
+    return this.#actions$.pipe(
+      ofType(AuthActions.logout),
+      tap(() => {
+        this.#router.navigate(['/login']);
+      })
+    );
+  }, { dispatch: false }); 
   
 }
