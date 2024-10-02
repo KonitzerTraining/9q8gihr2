@@ -4,7 +4,10 @@
 <app-error-box [message]="errorMessage$ | async"></app-error-box>
 <app-loading-indicator [show]="loading$ | async"></app-loading-indicator>
 
-@if((errorMessage$ | async) === null && (loading$ | async) !== true) {
+@if(isAuthenticated$ | async) {
+<h2>Welcome, {{userName$ | async }}</h2>
+}
+@else if ((errorMessage$ | async) === null && (loading$ | async) !== true) {
 <form [formGroup]="loginFormGroup" (ngSubmit)="formSubmitHandler()">
 
     <div class="mb-3">
@@ -18,6 +21,6 @@
     <div class="mb-3">
         <button type="submit" class="btn btn-primary">Login</button>
     </div>
-    
+
 </form>
 }

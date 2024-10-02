@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AuthActions } from '../state/actions/auth.actions';
-import { selectErrorMessage, selectLoading, selectUserName } from '../state/selectors/auth.selectors';
+import { selectErrorMessage, selectIsAuthenticated, selectLoading, selectUserName } from '../state/selectors/auth.selectors';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -17,6 +17,7 @@ export class LoginPageComponent {
   userName$ = this.#store.select(selectUserName);
   loading$: Observable<boolean> = this.#store.select(selectLoading);
   errorMessage$: Observable<null | string> = this.#store.select(selectErrorMessage);
+  isAuthenticated$: Observable<boolean> = this.#store.select(selectIsAuthenticated);
 
 
   loginFormGroup: FormGroup = inject(FormBuilder).group({
