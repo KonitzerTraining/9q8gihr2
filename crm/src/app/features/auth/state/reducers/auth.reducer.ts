@@ -19,6 +19,8 @@ export const initialState: State = {
 
 export const reducer = createReducer(
   initialState,
+
+  // Login
   on(AuthActions.login, state => {
     return {
       ...state,
@@ -26,20 +28,29 @@ export const reducer = createReducer(
       error: null
     };
   }),
-  on(AuthActions.loginSuccess, (state, {user}) => {
+  on(AuthActions.loginSuccess, (state, { user }) => {
     return {
       ...state,
       user,
       loading: false
     };
   }),
-  on(AuthActions.loginFailure, (state, {error}) => {
+  on(AuthActions.loginFailure, (state, { error }) => {
     return {
       ...state,
       error,
       loading: false
     };
   }),
+
+  // Logout
+  on(AuthActions.logout, state => {
+    return {
+      ...state,
+      user: null
+    };
+  }
+  )
 );
 
 export const authFeature = createFeature({
