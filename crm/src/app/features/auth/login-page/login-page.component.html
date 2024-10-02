@@ -1,5 +1,10 @@
 <h1 class="display-3">Login</h1>
 
+
+<app-error-box [message]="errorMessage$ | async"></app-error-box>
+<app-loading-indicator [show]="loading$ | async"></app-loading-indicator>
+
+@if((errorMessage$ | async) === null && (loading$ | async) !== true) {
 <form [formGroup]="loginFormGroup" (ngSubmit)="formSubmitHandler()">
 
     <div class="mb-3">
@@ -15,3 +20,4 @@
     </div>
     
 </form>
+}
