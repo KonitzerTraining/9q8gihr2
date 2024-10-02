@@ -19,6 +19,8 @@ export const initialState: State = {
 
 export const reducer = createReducer(
   initialState,
+
+  // Load Products
   on(ProductActions.loadProducts, state => {
     return {
       ...state, // Spread-Operatore (ES6)
@@ -44,6 +46,16 @@ export const reducer = createReducer(
       errorMessage: error,
     };
   }),
+
+  // Delete Product
+  on(ProductActions.deleteProduct, state => {
+    return {
+      ...state,
+      loading: true,
+      errorMessage: null,
+    };
+  }
+  ),
 );
 
 export const productFeature = createFeature({
