@@ -54,8 +54,8 @@ export const reducer = createReducer(
       loading: true,
       errorMessage: null,
     };
-  }
-  ),
+  }),
+  
   on(ProductActions.deleteProductSuccess, (state, { productId }) => {
     return {
       ...state,
@@ -63,6 +63,7 @@ export const reducer = createReducer(
       loading: false,
     };
   }),
+
   on(ProductActions.deleteProductFailure, (state, { error }) => {
     return {
       ...state,
