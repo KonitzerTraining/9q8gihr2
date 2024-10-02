@@ -15,13 +15,24 @@ export class ProductEffects {
 
 
   loadProducts$ = createEffect(() => {
-
     return this.#actions$.pipe(
       ofType(ProductActions.loadProducts),
       exhaustMap(() =>
         this.#productService.getProducts().pipe(
           map(products => ProductActions.loadProductsSuccess({ products })),
           catchError(error => of(ProductActions.loadProductsFailure({ error: error.message })))
+        )
+      )
+    );
+  });
+
+  deleteProduct$ = createEffect(() => {
+    return this.#actions$.pipe(
+      ofType(ProductActions.deleteProduct),
+      exhaustMap(({productId}) =>
+        this.#productService.deleteProduct(productId).pipe(
+          map(() => ProductActions.deleteProductSuccess({ productId })),
+          catchError(error => of(ProductActions.deleteProductFailure({ error: error.message })))
         )
       )
     );
