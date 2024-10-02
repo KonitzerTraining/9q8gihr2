@@ -56,6 +56,20 @@ export const reducer = createReducer(
     };
   }
   ),
+  on(ProductActions.deleteProductSuccess, (state, { productId }) => {
+    return {
+      ...state,
+      products: state.products.filter(product => product.id !== productId),
+      loading: false,
+    };
+  }),
+  on(ProductActions.deleteProductFailure, (state, { error }) => {
+    return {
+      ...state,
+      loading: false,
+      errorMessage: error,
+    };
+  }),
 );
 
 export const productFeature = createFeature({
